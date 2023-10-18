@@ -18,3 +18,17 @@ if st != False:
     print(f'n == 소수')
 else:
     print(f'n == 소수가 아님')
+
+# 더 빠른 소수 생성기
+
+# K는 자리수
+
+K = int(input())
+
+is_prime = [True] * (10**K)
+
+iter_range = int((10**K)**0.5)
+for i in range(2, iter_range + 1):
+    if is_prime[i]:
+        for j in range(i+i, 10**K, i):
+            is_prime[j] = False
